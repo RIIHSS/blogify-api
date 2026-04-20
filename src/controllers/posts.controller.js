@@ -13,7 +13,17 @@ const getAllPosts = (req, res) => {
     });
 };
 
+const getPostById = async(req,res) => {
+    // Capture ID from URl(req.params)
+    const { postId } = req.params;
+
+    res.json({
+        message: `Fetching data for post with ID ${postId}` 
+    });
+};
+
 // Export the function so the router can use it
 module.exports = {
-    getAllPosts
+    getAllPosts,
+    getPostById
 };
